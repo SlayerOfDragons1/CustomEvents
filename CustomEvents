@@ -20,24 +20,24 @@ public class CustomEvents {
         Item Target = event.getStack().getItem();
         if(!level.isClientSide())
         {
-            if(Target.equals(ModItems.AMETHYSTGEM) && !player.getTags().contains("Picked"))
+            if(Target.equals(ModItems.AMETHYSTGEM.get()) && !player.getTags().contains("Picked"))
             {
                 level.playSound(null,player.blockPosition(), ModSounds.GOT_GEM.get(), SoundSource.PLAYERS,1f,1f);
                 player.addTag("Picked");
-            } else if (Target.equals(ModItems.ALEXANDRITE) && !player.getTags().contains("Picked_1"))
+            } else if (Target.equals(ModItems.ALEXANDRITE.get()) && !player.getTags().contains("Picked_1"))
             {
                 level.playSound(null,player.blockPosition(), ModSounds.GOT_GEM.get(), SoundSource.PLAYERS,1f,1f);
                 player.addTag("Picked_1");
 
-            } else if (Target.equals(ModItems.AMETRINE) && !player.getTags().contains("Picked_2")) {
+            } else if (Target.equals(ModItems.AMETRINE.get()) && !player.getTags().contains("Picked_2")) {
                 level.playSound(null, player.blockPosition(), ModSounds.GOT_GEM.get(), SoundSource.PLAYERS, 1f, 1f);
                 player.addTag("Picked_2");
 
-            } else if (Target.equals(ModItems.AQUAMARINE) && !player.getTags().contains("Picked_3")) {
+            } else if (Target.equals(ModItems.AQUAMARINE.get()) && !player.getTags().contains("Picked_3")) {
                 level.playSound(null, player.blockPosition(), ModSounds.GOT_GEM.get(), SoundSource.PLAYERS, 1f, 1f);
                 player.addTag("Picked_3");
 
-            } else if (Target.equals(ModItems.CITRINE) && !player.getTags().contains("Picked_4")) {
+            } else if (Target.equals(ModItems.CITRINE.get()) && !player.getTags().contains("Picked_4")) {
                 level.playSound(null, player.blockPosition(), ModSounds.GOT_GEM.get(), SoundSource.PLAYERS, 1f, 1f);
                 player.addTag("Picked_4");
 
