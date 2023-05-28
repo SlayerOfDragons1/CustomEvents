@@ -1,0 +1,47 @@
+package net.slayerofdragons.jewelmod.events;
+
+import net.minecraft.sounds.SoundSource;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.level.Level;
+import net.minecraftforge.event.entity.player.PlayerEvent;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.common.Mod;
+import net.slayerofdragons.jewelmod.item.ModItems;
+import net.slayerofdragons.jewelmod.sound.ModSounds;
+
+@Mod.EventBusSubscriber(modid = "jewelmod")
+public class CustomEvents {
+    @SubscribeEvent
+    public static void OnPickup(PlayerEvent.ItemPickupEvent event)
+    {
+        Player player = event.getPlayer();
+        Level level = player.level;
+        Item Target = event.getStack().getItem();
+        if(!level.isClientSide())
+        {
+            if(Target.equals(ModItems.AMETHYSTGEM) && !player.getTags().contains("Picked"))
+            {
+                level.playSound(null,player.blockPosition(), ModSounds.GOT_GEM.get(), SoundSource.PLAYERS,1f,1f);
+                player.addTag("Picked");
+            } else if (Target.equals(ModItems.ALEXANDRITE) && !player.getTags().contains("Picked_1"))
+            {
+                level.playSound(null,player.blockPosition(), ModSounds.GOT_GEM.get(), SoundSource.PLAYERS,1f,1f);
+                player.addTag("Picked_1");
+
+            } else if (Target.equals(ModItems.AMETRINE) && !player.getTags().contains("Picked_2")) {
+                level.playSound(null, player.blockPosition(), ModSounds.GOT_GEM.get(), SoundSource.PLAYERS, 1f, 1f);
+                player.addTag("Picked_2");
+
+            } else if (Target.equals(ModItems.AQUAMARINE) && !player.getTags().contains("Picked_3")) {
+                level.playSound(null, player.blockPosition(), ModSounds.GOT_GEM.get(), SoundSource.PLAYERS, 1f, 1f);
+                player.addTag("Picked_3");
+
+            } else if (Target.equals(ModItems.CITRINE) && !player.getTags().contains("Picked_4")) {
+                level.playSound(null, player.blockPosition(), ModSounds.GOT_GEM.get(), SoundSource.PLAYERS, 1f, 1f);
+                player.addTag("Picked_4");
+
+            }
+        }
+    }
+}
